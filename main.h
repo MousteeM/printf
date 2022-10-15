@@ -4,6 +4,9 @@
 #define ARRAY_SIZE 1024
 
 /* _printf */
-int _printf(const char *format, ...);
+iint _printf(const char *format, ...);
+
+/* _putchar.c */
+int _putchar(char c);
 
 #endif /* MAIN_H */
