@@ -50,5 +50,5 @@ void print_array(char array[], int *arrayIndex)
 		if (*arrayIndex > 0)
 			write(1, &array[0], *arrayIndex);
 
-		*buff_ind = 0;
+		*arrayIndex = 0;
 }
