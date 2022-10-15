@@ -28,11 +28,12 @@ char *_strdup(const char *src);
  * printFunction - structure of print variable function
  * @spec: specifier
  * @func: Function
-*/
 typedef struct printFunction
 {
 	int (*func)(va_list);
 	char *spec;
 } prtFunc;
+/* printChar.c */
+int printChar(va_list arguments);
 
 #endif /* MAIN_H */
