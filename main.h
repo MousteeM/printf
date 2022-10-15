@@ -19,4 +19,7 @@ char *_strncpy(char *dest, char *src, int n);
 /* _strdup.c */
 char *_strdup(const char *src);
 
+/* printChar.c */
+int printChar(va_list arguments);
+
 #endif /* MAIN_H */
