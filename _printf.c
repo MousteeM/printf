@@ -1,6 +1,6 @@
 #include "main.h"
 
-void print_array(char array[], int *arrayIndex)
+void print_array(char array[], int *arrayIndex);
 
 /**
  * _printf - print output according to specified format
