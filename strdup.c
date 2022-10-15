@@ -9,7 +9,7 @@
  * NULL if str = null
  * NULL if unsuccessful
 */
-char *_strdup(char *str)
+char *_strdup(const char *str)
 {
 	int i, len;
 	char *dup;
