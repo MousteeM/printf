@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 
 /**
  * print_array - prints existing content of array
- * @buffer: array of characters
+ * @array: array of characters
  * @arrayIndex: length.
  */
 void print_array(char array[], int *arrayIndex)
