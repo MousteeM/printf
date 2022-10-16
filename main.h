@@ -22,4 +22,10 @@ char *_strdup(const char *src);
 /* printChar.c */
 int printChar(va_list arguments);
 
+/* printUnsignedNum */
+int printUnsignedNum(unsigned int n);
+
+/* printNumber */
+int printNumber(int n);
+
 #endif /* MAIN_H */
