@@ -31,7 +31,8 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			printVariable((tmpFormat + i), arguments);
+			count += printVariable((tmpFormat + i), arguments);
+			i++; /* move the index pass the specifier */
 		}
 	}
 
