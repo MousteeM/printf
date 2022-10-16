@@ -24,16 +24,25 @@ char *_strncpy(char *dest, char *src, int n);
 /* _strdup.c */
 char *_strdup(const char *src);
 
+/* printChar.c */
+int printChar(va_list arguments);
+
 /**
- * printFunction - structure of print variable function
+ * struct printFunction - structure of print variable function
  * @spec: specifier
  * @func: Function
-typedef struct printFunction
+ **/
+struct printFunction
 {
 	int (*func)(va_list);
 	char *spec;
-} prtFunc;
-/* printChar.c */
-int printChar(va_list arguments);
+};
+typedef struct printFunction prtFunc;
+
+/* printUnsignedNum */
+int printUnsignedNum(unsigned int n);
+
+/* printNumber */
+int printNumber(int n);
 
 #endif /* MAIN_H */
