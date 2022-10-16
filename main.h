@@ -22,6 +22,18 @@ char *_strdup(const char *src);
 /* printChar.c */
 int printChar(va_list arguments);
 
+/**
+ * struct printFunction - structure of print variable function
+ * @spec: specifier
+ * @func: Function
+ **/
+struct printFunction
+{
+	int (*func)(va_list);
+	char *spec;
+};
+typedef struct printFunction prtFunc;
+
 /* printUnsignedNum */
 int printUnsignedNum(unsigned int n);
 
