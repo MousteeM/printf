@@ -39,4 +39,10 @@ struct printFunction
 };
 typedef struct printFunction prtFunc;
 
+/* printUnsignedNum */
+int printUnsignedNum(unsigned int n);
+
+/* printNumber */
+int printNumber(int n);
+
 #endif /* MAIN_H */
