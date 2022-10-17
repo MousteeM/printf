@@ -31,11 +31,6 @@ int printVariable(char *str, va_list arguments)
 		flag = checkSpecifier(printFunctions[i].spec, str);
 		if (flag) /* specifier matches */
 		{
-			if (checkSpecifier(printFunctions[i].spec, "%%")
-			{
-				count = printFunctions[i].func();
-				return (count);
-			}
 			count = printFunctions[i].func(arguments);
 			return (count);
 		}

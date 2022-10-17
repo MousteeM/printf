@@ -31,7 +31,7 @@ int printChar(va_list arguments);
 int printString(va_list arguments);
 
 /* printalphabets.c */
-void printPercent(void);
+int printPercent(va_list);
 
 /**
  * struct printFunction - structure of print variable function
@@ -49,6 +49,6 @@ typedef struct printFunction prtFunc;
 int printUnsignedNum(unsigned int n);
 
 /* printNumber */
-int printNumber(int n);
+int printNumber(va_list arguments);
 
 #endif /* MAIN_H */

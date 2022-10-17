@@ -4,18 +4,20 @@ int prtNum(int num);
 
 /**
  * printNumber - prints an integer
- * @n: input
+ * @arguments: variadic arguments list
  * Return: number of chararcters printed
 */
 int printNumber(va_list arguments)
 {
-	int num;
+	int num, count;
 
+	count = 0;
 	num = va_arg(arguments, int);
 	if (num < 0)
 		_putchar('-');
 
-	prtNum(num);
+	count = prtNum(num);
+	return (count);
 }
 
 /**
@@ -26,7 +28,8 @@ int printNumber(va_list arguments)
 */
 int prtNum(int num)
 {
-	int count;
+	int count = 0;
+
 	if (!(num / 10))
 	{
 		_putchar(num % 10 + '0');

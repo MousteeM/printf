@@ -25,15 +25,19 @@ int printString(va_list arguments)
 	if (!s)
 		s = "(null)";
 	/* I'm not sure if this return function is correct */
-	return (s);
+//	return (s);
 }
 
 /**
  * printPercent - print percent character to standard output
+ * @a: variadic arguments
+ *
+ * Return: number of characters printed (1)
 */
-void printPercent(void)
+int printPercent(va_list a)
 {
-	putchar('%');
+	a = a; /* unused variable error nullified */
+	_putchar('%');
 
 	return (1);
 }
