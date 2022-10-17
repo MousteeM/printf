@@ -30,6 +30,9 @@ int printChar(va_list arguments);
 /* printString.c */
 int printString(va_list arguments);
 
+/* printalphabets.c */
+void printPercent(void);
+
 /**
  * struct printFunction - structure of print variable function
  * @spec: specifier
