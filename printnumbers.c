@@ -58,7 +58,7 @@ int printUnsignedNum(unsigned int n)
 			i++;
 		}
 		else
-		{	
+		{
 			_putchar(b + '0');
 			i = 1;
 		}
