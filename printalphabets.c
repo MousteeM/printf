@@ -24,5 +24,6 @@ int printString(va_list arguments)
 
 	if (!s)
 		s = "(null)";
-	return (_puts(s));
+	/* I'm not sure if this return function is correct */
+	return (s);
 }
