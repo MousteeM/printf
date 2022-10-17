@@ -36,6 +36,14 @@ int printVariable(char *str, va_list arguments)
 		}
 	}
 
+	if (str[1])
+	{
+		_putchar(str[0]);
+		_putchar(str[1]);
+		count = 2;
+		return (count);
+	}
+
 	return (FAIL);
 }
 

@@ -14,7 +14,11 @@ int printNumber(va_list arguments)
 	count = 0;
 	num = va_arg(arguments, int);
 	if (num < 0)
+	{
 		_putchar('-');
+		count++;
+		num = num * -1;
+	}
 
 	count = prtNum(num);
 	return (count);
