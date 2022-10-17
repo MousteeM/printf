@@ -27,6 +27,9 @@ char *_strdup(const char *src);
 /* printChar.c */
 int printChar(va_list arguments);
 
+/* printString.c */
+int printString(va_list arguments);
+
 /**
  * struct printFunction - structure of print variable function
  * @spec: specifier
