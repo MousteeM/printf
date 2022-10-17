@@ -27,6 +27,7 @@ int printNumber(va_list arguments)
 int prtNum(int num)
 {
 	int count;
+
 	if (!(num / 10))
 	{
 		_putchar(num % 10 + '0');
