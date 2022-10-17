@@ -20,12 +20,23 @@ int printChar(va_list arguments)
  */
 int printString(va_list arguments)
 {
-	char *s = va_arg(arguments, char *);
+	char *str = va_arg(arguments, char *);
+	int i = 0, count = 0;
 
+<<<<<<< HEAD
 	if (!s)
 		s = "(null)";
 	/* I'm not sure if this return function is correct */
 //	return (s);
+=======
+	if (!str)
+		str = "";
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		_putchar(str[i]);
+		count++;
+	}
+	return (count);
 }
 
 /**
