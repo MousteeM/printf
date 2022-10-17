@@ -1,69 +1,40 @@
 #include "main.h"
 
+int prtNum(int num);
+
 /**
  * printNumber - prints an integer
  * @n: input
  * Return: number of chararcters printed
- */
-
-int printNumber(int n)
+*/
+int printNumber(va_list arguments)
 {
-	int a, b, i = 0, l = 0;
+	int num;
 
-	if (n != 0)
-	{
-		if (n < 0)
-		{
-			_putchar('-');
-			n = -n;
-			l = 1;
-		}
-		a = n / 10;
-		b = n % 10;
-		if (a != 0)
-		{
-			i = printNumber(a);
-			i++;
-			_putchar(b + '0');
-		}
-		else
-		{
-			_putchar(b + '0');
-			i = 1;
-		}
-	}
-	else
-		_putchar('0');
-	return (i + l);
+	num = va_arg(arguments, int);
+	if (num < 0)
+		_putchar('-');
+
+	prtNum(num);
 }
+
 /**
- * printUnsignedNum - prints out an unsigned integer
- * @n: unsigned int to be printed
+ * prtNum - print number using recursion
+ * @num: number to print
  *
- * Return: integer
- */
-int printUnsignedNum(unsigned int n)
+ * Return: number of characters printed
+*/
+int prtNum(int num)
 {
-	unsigned int a, b;
-	int i = 0;
-
-	if (n != 0)
+	int count;
+	if (!(num / 10))
 	{
-		a = n / 10;
-		b = n % 10;
-		if (a != 0)
-		{
-			i = printUnsignedNum(a);
-			_putchar(b + '0');
-			i++;
-		}
-		else
-		{	
-			_putchar(b + '0');
-			i = 1;
-		}
+		_putchar(num % 10 + '0');
+		return (1);
 	}
-	else
-		_putchar('0');
-	return (i);
+
+	count += prtNum(num / 10);
+	_putchar(num % 10 + '0');
+	return (count + 1);
 }
+
