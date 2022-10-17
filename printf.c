@@ -14,12 +14,12 @@ int _printf(const char *format, ...)
 {
 	char *tmpFormat;
 	va_list arguments;
-	int i, count;
+	int i, count, ret;
 
 	if (format == NULL)
 		return (FAIL);/* No format passed */
 
-	count = i = 0;
+	ret = count = i = 0;
 	va_start(arguments, format);
 	tmpFormat = _strdup(format);
 	for (i = 0; tmpFormat[i] != '\0'; i++)
@@ -31,7 +31,10 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			count += printVariable((tmpFormat + i), arguments);
+			ret = printVariable((tmpFormat + i), arguments);
+			if (ret < 0)
+				return (FAIL);
+			count += ret;
 			i++;/* skip the specifier */
 		}
 	}
