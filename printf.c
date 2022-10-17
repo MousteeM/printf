@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 	int i, count;
 
 	if (format == NULL)
-		return (-1);
+		return (FAIL);/* No format passed */
 
 	count = i = 0;
 	va_start(arguments, format);
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			count += printVariable((tmpFormat + i), arguments);
-			i++; /* move the index pass the specifier */
+			i++;/* skip the specifier */
 		}
 	}
 
