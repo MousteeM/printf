@@ -12,6 +12,7 @@ int printVariable(char *src, va_list arguments);
 
 /* _putchar.c */
 int _putchar(char c);
+int _puts(char *str);
 
 /* _strncpy.c */
 char *_strncpy(char *dest, char *src, int n);
