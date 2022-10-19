@@ -17,11 +17,8 @@ int printVariable(char *src, va_list arguments, char *str)
 {
 	int i, flag, count;
 	prtFunc printFunctions[] = {
-		{printChar, "%c"},
-		{printNumber, "%d"},
-		{printNumber, "%i"},
-		{printString, "%s"},
-		{printPercent, "%%"},
+		{printChar, "%c"}, {printNumber, "%d"}, {printNumber, "%i"},
+		{printString, "%s"}, {printPercent, "%%"}, {getBinary, "%b"},
 		{NULL, NULL}
 	};
 

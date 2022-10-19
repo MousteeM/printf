@@ -33,6 +33,9 @@ int printString(va_list arguments, char *str);
 /* printalphabets.c */
 int printPercent(va_list, char *str);
 
+/* getbase.c */
+int getBinary(va_list arguments, char *str);
+
 /**
  * struct printFunction - structure of print variable function
  * @spec: specifier
