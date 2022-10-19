@@ -1,47 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
-
-int prtNum(int num);
 
 /**
  * printNumber - prints an integer
  * @arguments: variadic arguments list
+ * @str: string to store number
+ *
  * Return: number of chararcters printed
 */
-int printNumber(va_list arguments)
+int printNumber(va_list arguments, char *str)
 {
-	int num, count;
+	int tmp, num, count, i;
 
-	count = 0;
+	tmp = num = count = i = 0;
+	free(str);
 	num = va_arg(arguments, int);
+	tmp = num;
+
+	for (count = 0; tmp; count++)
+		tmp = tmp / 10;
+	if (num == 0)
+	count = 1; /* For loop will never run if num = 0 */
+	if (num < 0)
+		count++;
+	str = malloc(sizeof(char) * (count + 1));/* plus null byte */
 	if (num < 0)
 	{
-		_putchar('-');
-		count++;
 		num = num * -1;
+		str[count - 1] = '-';
 	}
 
-	count = prtNum(num);
-	return (count);
-}
-
-/**
- * prtNum - print number using recursion
- * @num: number to print
- *
- * Return: number of characters printed
-*/
-int prtNum(int num)
-{
-	int count = 0;
-
-	if (!(num / 10))
+	for (i = 0; i < count; ++i)
 	{
-		_putchar(num % 10 + '0');
-		return (1);
+		str[i] = (num % 10) + '0';
+		num /= 10;
+		if (!num)
+			break;
 	}
+	str[count] = '\0';
+	strRev(str);
 
-	count += prtNum(num / 10);
-	_putchar(num % 10 + '0');
-	return (count + 1);
+	return (count);
 }
 

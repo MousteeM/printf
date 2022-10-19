@@ -1,17 +1,19 @@
 #include <stddef.h>
 #include <stdarg.h>
+#include <stdlib.h>
 #include "main.h"
 
 int checkSpecifier(char *specifier, char *str);
 
 /**
  * printVariable - print appropriate variable to stdout
- * @str: string to check for specifiers
+ * @src: string to check for specifiers
+ * @str: string to store characters in
  * @arguments: va_list arguments
  *
  * Return: number of characters printed
 */
-int printVariable(char *str, va_list arguments)
+int printVariable(char *src, va_list arguments, char *str)
 {
 	int i, flag, count;
 	prtFunc printFunctions[] = {
@@ -28,18 +30,19 @@ int printVariable(char *str, va_list arguments)
 	for (i = 0; printFunctions[i].spec; ++i)
 	{
 		/* compare specifiers */
-		flag = checkSpecifier(printFunctions[i].spec, str);
+		flag = checkSpecifier(printFunctions[i].spec, src);
 		if (flag) /* specifier matches */
 		{
-			count = printFunctions[i].func(arguments);
+			count = printFunctions[i].func(arguments, str);
 			return (count);
 		}
 	}
 
-	if (str[1])
+	if (src[1])
 	{
-		_putchar(str[0]);
-		_putchar(str[1]);
+		str = malloc(sizeof(char) * 2);
+		str[0] = src[0];
+		str[1] = src[1];
 		count = 2;
 		return (count);
 	}

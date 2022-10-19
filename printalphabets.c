@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -6,9 +7,13 @@
  *
  * Return: number of char printed
  */
-int printChar(va_list arguments)
+int printChar(va_list arguments, char *str)
 {
-	_putchar(va_arg(arguments, int));
+	free(str);
+	str = malloc(sizeof(char) * 2);/* allocated memory for 1 char and null character */
+	str[0] = va_arg(arguments, int);
+	str[1] = '\0';
+
 	return (1);
 }
 
@@ -18,18 +23,26 @@ int printChar(va_list arguments)
  * @arguments: va_list arguments from _printf
  * Return: number of char printed
  */
-int printString(va_list arguments)
+int printString(va_list arguments, char *str)
 {
-	char *str = va_arg(arguments, char *);
+	char *var = va_arg(arguments, char *);
 	int i = 0, count = 0;
 
-	if (!str)
-		str = "";
-	for (i = 0; str[i] != '\0'; i++)
+	if (!var)
+		var = "(null)";
+
+		for (count = 0; var[count] != '\0'; ++count)
+		;
+	free(str);
+	str = malloc(sizeof(char) * (count + 1));
+	/* copy var to str */
+	while (var[i])
 	{
-		_putchar(str[i]);
-		count++;
+		str[i] = var[i];
+		i++;
 	}
+	str[i] = '\0';
+
 	return (count);
 }
 
@@ -39,10 +52,14 @@ int printString(va_list arguments)
  *
  * Return: number of characters printed (1)
 */
-int printPercent(va_list a)
+int printPercent(va_list a, char *str)
 {
 	a = a; /* unused variable error nullified */
-	_putchar('%');
+
+	free(str);
+	str = malloc(sizeof(char) * 2);
+	str[0] = '%';
+	str[1] = '\0';
 
 	return (1);
 }

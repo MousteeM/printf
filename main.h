@@ -5,6 +5,7 @@
 #define TRUE (1)
 #define FALSE (0)
 #define FAIL (-1)
+#define BUFFERSIZE 1024
 
 /* including stdarg.h because of it's data types (e.g. va_list */
 #include <stdarg.h>
@@ -13,7 +14,7 @@
 int _printf(const char *format, ...);
 
 /* printvariable.c */
-int printVariable(char *src, va_list arguments);
+int printVariable(char *src, va_list arguments, char *str);
 
 /* _putchar.c */
 int _putchar(char c);
@@ -21,17 +22,14 @@ int _putchar(char c);
 /* _strncpy.c */
 char *_strncpy(char *dest, char *src, int n);
 
-/* _strdup.c */
-char *_strdup(const char *src);
-
 /* printChar.c */
-int printChar(va_list arguments);
+int printChar(va_list arguments, char *str);
 
 /* printString.c */
-int printString(va_list arguments);
+int printString(va_list arguments, char *str);
 
 /* printalphabets.c */
-int printPercent(va_list);
+int printPercent(va_list, char *str);
 
 /**
  * struct printFunction - structure of print variable function
@@ -40,7 +38,7 @@ int printPercent(va_list);
  **/
 struct printFunction
 {
-	int (*func)(va_list);
+	int (*func)(va_list, char *);
 	char *spec;
 };
 typedef struct printFunction prtFunc;
@@ -49,6 +47,11 @@ typedef struct printFunction prtFunc;
 int printUnsignedNum(unsigned int n);
 
 /* printNumber */
-int printNumber(va_list arguments);
+int printNumber(va_list arguments, char *str);
+
+/* string.c */
+void strRev(char *str);
+int _strcat(char *dest, char *src, int len);
+char *_strdup(const char *src);
 
 #endif /* MAIN_H */
