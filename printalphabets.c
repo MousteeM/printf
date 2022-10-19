@@ -4,13 +4,15 @@
 /**
  * printChar - prints a character
  * @arguments: va_list arguments from _printf
+ * @str: string to store characters to be printed
  *
  * Return: number of char printed
  */
 int printChar(va_list arguments, char *str)
 {
 	free(str);
-	str = malloc(sizeof(char) * 2);/* allocated memory for 1 char and null character */
+	str = malloc(sizeof(char) * 2);
+	/* allocated memory for 1 char and null character */
 	str[0] = va_arg(arguments, int);
 	str[1] = '\0';
 
@@ -21,6 +23,8 @@ int printChar(va_list arguments, char *str)
  * printString - loops through a string and prints
  * every character
  * @arguments: va_list arguments from _printf
+ * @str: string to store characters
+ *
  * Return: number of char printed
  */
 int printString(va_list arguments, char *str)
@@ -31,7 +35,7 @@ int printString(va_list arguments, char *str)
 	if (!var)
 		var = "(null)";
 
-		for (count = 0; var[count] != '\0'; ++count)
+	for (count = 0; var[count] != '\0'; ++count)
 		;
 	free(str);
 	str = malloc(sizeof(char) * (count + 1));
@@ -49,6 +53,7 @@ int printString(va_list arguments, char *str)
 /**
  * printPercent - print percent character to standard output
  * @a: variadic arguments
+ * @str: buffer to store characters
  *
  * Return: number of characters printed (1)
 */

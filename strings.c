@@ -27,14 +27,14 @@ void strRev(char *str)
 * _strcat - concactenate two strings
 * @src: String to concactinate
 * @dest: concactenate here
+* @len: index to start concatenating
 *
 * Return: concatenated string
 */
 int _strcat(char *dest, char *src, int len)
 {
-	int i, j;
+	int j = 0;
 
-	i = j = 0;
 	for (j = 0; src[j]; j++, len++)
 	dest[len] = src[j];
 	dest[len] = '\0';

@@ -40,9 +40,11 @@ int printVariable(char *src, va_list arguments, char *str)
 
 	if (src[1])
 	{
-		str = malloc(sizeof(char) * 2);
+		free(str);
+		str = malloc(sizeof(char) * 3);
 		str[0] = src[0];
 		str[1] = src[1];
+		str[2] = '\0';
 		count = 2;
 		return (count);
 	}

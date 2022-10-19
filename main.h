@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+/* comments above prototypes are the file the functions are in */
+
 /* macros */
 #define TRUE (1)
 #define FALSE (0)

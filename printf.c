@@ -35,7 +35,8 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			ret = printVariable((tmpFormat + i), arguments, str);/* tmp to store the characters */
+			ret = printVariable((tmpFormat + i), arguments, str);
+			/* str to store the characters */
 			if (ret < 0)
 				return (FAIL);
 			_strcat(buffer, str, count);
