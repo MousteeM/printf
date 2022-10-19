@@ -22,9 +22,6 @@ int printVariable(char *src, va_list arguments, char *str);
 int _putchar(char c);
 int _puts(char *str);
 
-/* _strncpy.c */
-char *_strncpy(char *dest, char *src, int n);
-
 /* printChar.c */
 int printChar(va_list arguments, char *str);
 
