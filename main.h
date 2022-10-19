@@ -20,6 +20,7 @@ int printVariable(char *src, va_list arguments, char *str);
 
 /* _putchar.c */
 int _putchar(char c);
+int _puts(char *str);
 
 /* _strncpy.c */
 char *_strncpy(char *dest, char *src, int n);
@@ -35,6 +36,9 @@ int printPercent(va_list, char *str);
 
 /* getbase.c */
 int getBinary(va_list arguments, char *str);
+
+/* convert.c */
+char *convert(unsigned long int num, int base, int lowercase);
 
 /**
  * struct printFunction - structure of print variable function
