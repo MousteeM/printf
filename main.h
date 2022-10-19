@@ -26,6 +26,8 @@ int printChar(va_list arguments);
 /* printString.c */
 int printString(va_list arguments);
 
+/* convert.c */
+char *convert(unsigned long int num, int base, int lowercase;)
 /**
  * struct printFunction - structure of print variable function
  * @spec: specifier
