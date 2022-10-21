@@ -33,6 +33,9 @@ int printPercent(va_list, char *str);
 
 /* getbase.c */
 int getBinary(va_list arguments, char *str);
+int getOctal(va_list arguments, char *str);
+int getHex(va_list arguments, char *str);
+int getHEX(va_list arguments, char *str);
 
 /* convert.c */
 char *convert(unsigned long int num, int base, int lowercase);
@@ -54,10 +57,12 @@ int printUnsignedNum(unsigned int n);
 
 /* printNumber */
 int printNumber(va_list arguments, char *str);
+int printUNumber(va_list arguments, char *str);
 
 /* string.c */
 void strRev(char *str);
 int _strcat(char *dest, char *src, int len);
 char *_strdup(const char *src);
+char getHexChar(int num, int hulk);
 
 #endif /* MAIN_H */

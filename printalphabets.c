@@ -12,7 +12,9 @@ int printChar(va_list arguments, char *str)
 {
 	free(str);
 	str = malloc(sizeof(char) * 2);
-	/* allocated memory for 1 char and null character */
+	if (!str)
+		return (FAIL);
+
 	str[0] = va_arg(arguments, int);
 	str[1] = '\0';
 
@@ -39,6 +41,9 @@ int printString(va_list arguments, char *str)
 		;
 	free(str);
 	str = malloc(sizeof(char) * (count + 1));
+	if (!str)
+		return (FAIL);
+
 	/* copy var to str */
 	while (var[i])
 	{
@@ -63,6 +68,9 @@ int printPercent(va_list a, char *str)
 
 	free(str);
 	str = malloc(sizeof(char) * 2);
+	if (!str)
+		return (FAIL);
+
 	str[0] = '%';
 	str[1] = '\0';
 
