@@ -69,4 +69,34 @@ char *_strdup(const char *str)
 	dup[len] = '\0';
 
 	return (dup);
+}
+
+/**
+ * getHexChar - gets the hex equivilent to int
+ * @num: int to convert to hex character
+ * @hulk: number to add to make upper or lower case
+ *
+ * Return: hex character
+*/
+char getHexChar(int num, int hulk)
+{
+	if (num <= 9)
+		return (num + '0');
+
+	switch (num)
+	{
+		case 10:
+			return ('A' + hulk);
+		case 11:
+			return ('B' + hulk);
+		case 12:
+			return ('C' + hulk);
+		case 13:
+			return ('D' + hulk);
+		case 14:
+			return ('E' + hulk);
+		case 15:
+			return ('F' + hulk);
 	}
+	return ('\0');
+}

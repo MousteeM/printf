@@ -19,7 +19,8 @@ int printVariable(char *src, va_list arguments, char *str)
 	prtFunc printFunctions[] = {
 		{printChar, "%c"}, {printNumber, "%d"}, {printNumber, "%i"},
 		{printString, "%s"}, {printPercent, "%%"}, {getBinary, "%b"},
-		{getOctal, "%o"}, {NULL, NULL}
+		{printUNumber, "%u"}, {getOctal, "%o"}, {getHex, "%x"},
+		{getHEX, "%X"}, {NULL, NULL}
 	};
 
 	count = flag = i = 0;
