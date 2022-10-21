@@ -35,6 +35,7 @@ int printPercent(va_list, char *str);
 
 /* getbase.c */
 int getBinary(va_list arguments, char *str);
+int getOctal(va_list arguments, char *str);
 
 /**
  * struct printFunction - structure of print variable function
